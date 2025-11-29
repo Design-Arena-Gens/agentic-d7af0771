@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap');
+
+:root {
+  --bg: #080c19;
+  --bg-soft: #0b1020;
+  --text: #e6f1ff;
+  --muted: #a9b8d6;
+  --primary: #7a5bff;
+  --accent: #00f5d4;
+}
+
+html, body, #__next {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(1200px 600px at 80% -20%, #10172b 20%, var(--bg) 60%),
+              radial-gradient(800px 400px at -10% 110%, #0e1630 0%, var(--bg) 60%);
+  color: var(--text);
+  font-family: 'Outfit', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px clamp(16px, 3vw, 32px);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 16px;
+  min-height: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.brand .dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, var(--accent), #3acfe3);
+  box-shadow: 0 0 20px rgba(0, 245, 212, 0.6), 0 0 40px rgba(90, 157, 255, 0.3);
+}
+.brand h1 {
+  font-size: clamp(20px, 2.4vw, 28px);
+  letter-spacing: 0.5px;
+  margin: 0;
+  font-weight: 800;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+.btn {
+  background: linear-gradient(180deg, var(--primary), #5b9dff);
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(122, 91, 255, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.2s ease;
+}
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(122, 91, 255, 0.45);
+}
+.btn.secondary {
+  background: #101735;
+  border: 1px solid #1a2557;
+  box-shadow: none;
+}
+.btn.secondary:hover {
+  background: #131b3d;
+}
+
+.stage {
+  height: min(calc(100vh - 180px), 720px);
+  min-height: 420px;
+  background: linear-gradient(180deg, rgba(16, 23, 43, 0.8), rgba(11, 16, 32, 0.8));
+  border: 1px solid #132047;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.footer {
+  color: var(--muted);
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  padding: 8px 0 16px;
+}
+
